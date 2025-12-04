@@ -14,5 +14,16 @@ const listMail=["asd@gmail.com" , "qwerty@gmail.com", "lol@yahoo.it", "johndoe@g
  let userInput= (prompt("Inserisci la tua mail"))
  let userInvited= false
 
- //controlla tutti le mail dell'array
- for(let i=0; i<listMail.lenght ; i++)
+ //controlla tutti le mail dell'array e verifico la variabile userInvited per tutta la lunghezza dell'array
+ for(let i=0; i<listMail.length && userInvited === false; i++){
+    if(userInput===listMail[i]){
+        userInvited=true;
+    }
+}
+//se la mail è presente nella lista array stampa altrimenti no
+ if(userInvited===true){
+    console.log("Sei stato invitato alla festa!")
+ }
+ else{
+    console.log("Mi dispiace, ma non sei presente nella lista di invitati")
+ }
